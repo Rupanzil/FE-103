@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getting user data</title>
+  </head>
+  <body>
+    <h1>User Data</h1>
+    <input
+      value=""
+      name="fullName"
+      placeholder="Enter name"
+      type="text"
+      id="name"
+    />
+    <input
+      value=""
+      id="email"
+      name="email"
+      type="email"
+      placeholder="Enter email"
+      name="email"
+    />
+    <input type="button" value="Submit" id="submitButton" />
+    <script>
+      const obj = { fullName: '', email: '' }
+
+      function handler(event) {
+        obj[event.target.name] = event.target.value
+        // console.log(obj)
+      }
+
+      function submitHandler() {
+        console.log(obj)
+      }
+
+      const nameField = document.getElementById('name')
+      const emailField = document.getElementById('email')
+
+      nameField.addEventListener('input', handler)
+      emailField.addEventListener('input', handler)
+
+      document
+        .getElementById('submitButton')
+        .addEventListener('click', submitHandler)
+    </script>
+  </body>
+</html>
